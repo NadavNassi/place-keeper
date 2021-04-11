@@ -12,7 +12,7 @@ function  createUser() {
             bgc: '#ffffff',
             textColor: '#000000',
             bDay: '',
-            location: {}
+            location: []
         }
     }
     gUser = user
@@ -25,5 +25,17 @@ const setUser = (userBgc, textColor, bday) => {
     gUser.bgc = userBgc
     gUser.bDay = bday
     gUser.textColor = textColor
+    saveToStorage(USER_KEY, gUser)
+}
+
+const setUserLocation = (latLng) => {
+    const locName = prompt('How would you like to call your location?')
+    if(!locName) return
+    const newLocation = { 
+        lat:latLng.lat(),
+        lng:latLng.lng(),
+        name:locName
+    }
+    gUser.location.push(newLocation)
     saveToStorage(USER_KEY, gUser)
 }

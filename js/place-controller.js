@@ -22,3 +22,10 @@ const onSubmitPrefs = (event) => {
     setUser(userColor, userTextColor, userDate);
     window.location.replace('index.html');
 }
+
+const renderLocations = (user) => {
+    const strHtml = user.location.map((location) => {
+        return `<tr><td class="location-cell" onclick="setLocationCenter({ lat: ${location.lat}, lng: ${location.lng} }, ${gMap})">${location.name}</td></tr>`
+    }).join('\n')
+    document.querySelector('.map-container tbody').innerHTML = strHtml
+}

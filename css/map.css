@@ -1,0 +1,31 @@
+.main {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center
+}
+
+.map-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+}
+
+#map {
+    height: 80%;
+    width: 60%;
+    margin-right: 10px;
+    align-self: flex-start;
+    position: fixed;
+    left: 0;
+}
+
+.location-cell {
+    cursor: pointer;
+}
