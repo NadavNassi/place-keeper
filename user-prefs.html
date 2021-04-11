@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACE KEEPER</title>
+</head>
+<body onload="init(), loadUserVal()">
+    <h2>user prefs page</h2> 
+    <form onsubmit="onSubmitPrefs(event)">
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="color-select">Choose your favorite color</label></td>
+                    <td><input id="color-select" class="bgc-select" type="color"></td>
+                </tr>
+                <tr>
+                    <td><label for="text-select"></label> What is your birthday?</td>
+                    <td><input id="text-select" class="text-color" type="color"></td>
+                </tr>
+                <tr>
+                    <td><label for="date-select"></label> What is your birthday?</td>
+                    <td><input id="date-select" type="date"></td>
+                </tr>
+                <tr>
+                    <td><button>Submit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <a href="index.html">Go Back</a>
+    <script src="js/service/storage.service.js"></script>
+    <script src="js/service/place.service.js"></script>
+    <script src="js/service/user.pref.service.js"></script>
+    <script src="js/service/util.service.js"></script>
+    <script src="js/place-controller.js"></script>
+</body>
+</html>

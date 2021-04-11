@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACE KEEPER</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onload="init(), initMap()">
+    <h2>map page</h2>
+    <div id="map"></div>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5S-mgaAxZpb1hYwhw2kCWdzo5535ai4A&callback=initMap">
+</script>
+    <script src="js/service/storage.service.js"></script>
+    <script src="js/service/place.service.js"></script>
+    <script src="js/service/user.pref.service.js"></script>
+    <script src="js/service/util.service.js"></script>
+    <script src="js/place-controller.js"></script>
+</body>
+</html>
