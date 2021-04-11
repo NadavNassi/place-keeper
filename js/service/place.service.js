@@ -30,7 +30,7 @@ function initMap() {
 
     infoWindow = new google.maps.InfoWindow();
     const locationButton = document.createElement('button');
-    locationButton.textContent.url = 'FIND YOURSELF!';
+    locationButton.textContent = 'FIND YOURSELF';
     locationButton.classList.add('custom-map-control-button');
     gMap.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
     locationButton.addEventListener('click', () => {
@@ -61,24 +61,28 @@ function initMap() {
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(
-      browserHasGeolocation
-        ? 'Error: The Geolocation service failed.'
-        : 'Error: Your browser doesn\'t support geolocation.'
+        browserHasGeolocation
+            ? 'Error: The Geolocation service failed.'
+            : 'Error: Your browser doesn\'t support geolocation.'
     );
     infoWindow.open(gMap);
-  }
+}
 
 function placeMarkerAndPanTo(latLng, map) {
-    console.log('latLng', latLng)
     new google.maps.Marker({
         position: latLng,
         map,
     });
     map.panTo(latLng);
-    setUserLocation(latLng)
+    // setUserLocation(latLng)
+    const newLatLng = { 
+        lat: latLng.lat(), 
+        lng: latLng.lng()
+    }
+    onAddNewPlace(newLatLng)
 }
 
-function  setLocationCenter(latlng)  {
+function setLocationCenter(latlng) {
     const center = new google.maps.LatLng(latlng)
     gMap.setCenter(center)
 }

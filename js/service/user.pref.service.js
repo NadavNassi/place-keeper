@@ -12,6 +12,8 @@ function  createUser() {
             bgc: '#ffffff',
             textColor: '#000000',
             bDay: '',
+            email: '',
+            range: 18,
             location: []
         }
     }
@@ -21,21 +23,26 @@ function  createUser() {
 
 const getUser = () => gUser
 
-const setUser = (userBgc, textColor, bday) => {
+const setUser = (userBgc, textColor, bday, email) => {
     gUser.bgc = userBgc
     gUser.bDay = bday
     gUser.textColor = textColor
+    gUser.email = email
     saveToStorage(USER_KEY, gUser)
 }
 
-const setUserLocation = (latLng) => {
-    const locName = prompt('How would you like to call your location?')
-    if(!locName) return
+const setUserLocation = (name, latLng) => {
     const newLocation = { 
-        lat:latLng.lat(),
-        lng:latLng.lng(),
-        name:locName
+        lat:latLng.lat,
+        lng:latLng.lng,
+        name
     }
     gUser.location.push(newLocation)
     saveToStorage(USER_KEY, gUser)
+}
+
+const removeLocation = (lockName) => {
+    const user = getUser();
+    const locationIdx = user.location.findIndex(loc => loc.name === locName)
+    console.log('locationIdx', locationIdx)
 }
